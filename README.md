@@ -48,4 +48,17 @@ I have artificially divided the original dataset with all the info (available on
 ## SSMS
 
 - This was a good opportunity to try out a new tool, Microsoft SSMS. MySQL and PostgreSQL are my tools of choice for relational databases, but it never hurts to explore!
+- That being said, with the back-end being coded in the ancient eldritch tongues of the elder Microsoft gods, it is impossible to avoid a plethora of system conflicts (especially related to 32/64bit issues).
+	- Say you want to import that `covid_deaths.csv` file into SSMS. Its own tools will not suffice, as you will run into more and more errors of duplicitous meaning. 
+
+<p align="center"><img src="images/sql1.png"width="100%"/></p>
+
+- Thankfully, SSMS's sister program, _Microsoft SQL Server_, comes packaged with its own "SQL Server Import and Export data" 64-bit application.
+
+<p align="center"><img src="images/sql2.png"width="100%"/></p>
+
+... Which works! Will this be the last time we are confounded by this Microsoft treachery? I highly doubt it. Anyway:
+
+
+
 
