@@ -88,9 +88,11 @@ Anyway. With that out of the way, we are ready to run some queries. The syntax i
 
 ### Looking at Total Cases vs Total Deaths. What does the mortality look like?
 
+'''
 SELECT Location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as 'death%'
 FROM Covid..covid_deaths
 order by 1,2
+'''
 
 | Location | Date                    | total_cases | total_deaths | death%           |
 |----------|-------------------------|-------------|--------------|------------------|
@@ -117,7 +119,16 @@ In Brazil, as of 12/16/2022, Brazil had close to 36 million registered cases. Cl
 
 ### Total Cases vs Population. What (rough) percentage of the population got infected
 
-| Location | Date                    | total_cases | Population | death%               |
+- Very similar to the last query, our last column is a ratio of the 2 previous ones.
+
+'''
+SELECT Location, date, total_cases, Population, (total_cases/Population)*100 as 'case%'
+FROM Covid..covid_deaths
+WHERE location = 'Brazil'
+order by 1,2 
+'''
+
+| Location | Date                    | total_cases | Population | cases%               |
 |----------|-------------------------|-------------|------------|----------------------|
 | Brazil   | 2020-02-26 00:00:00.000 | 1           | 215313504  | 4.64439053483612E-07 |
 | Brazil   | 2020-02-27 00:00:00.000 | 1           | 215313504  | 4.64439053483612E-07 |
@@ -133,4 +144,5 @@ In Brazil, as of 12/16/2022, Brazil had close to 36 million registered cases. Cl
 - The last line being the most useful here, we see that almost 17% of the country registered Covid cases. This number is probably over 1/5 considering that a lot of patients were asymptomatic (or decided not to check into a hospital).
 	- Note: at this point we must realize that SQL enables us to put the data under a microscope and query exactly what we want to see for, say, a specific range of date or a specific location. Later, however, we can input this same data into Tableau and get a bird-eye's view of the situation. Perhaps, even.. animate a global map?
 
-### Total Cases vs Population. What (rough) percentage of the population got infected
+### Looking at countires with highest infection rate compared to population.
+
