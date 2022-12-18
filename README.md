@@ -1,4 +1,4 @@
-# Covid_SQL
+# $\color{red}{\textrm{COVID_SQL}}$ :hospital:
  
 ![GitHub top language](https://img.shields.io/github/languages/top/hbatistuzzo/Covid_SQL)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/hbatistuzzo/Covid_SQL)
@@ -9,7 +9,7 @@
 
 # Project objective
 
-**Exploratory Analysis of a Covid-19 Dataset using SQL** :hospital:
+**Exploratory Analysis of a Covid-19 Dataset using SQL**
 
 I've done this project to showcase my skills related to:
 
@@ -90,7 +90,8 @@ Anyway. With that out of the way, we are ready to run some queries. The syntax i
 
 - These will be focused on Brazillian cases, though the syntax is very easily changed on the sql file `SQL_covid.sql`.
 
-## ${\color{orange}- Total  \ Cases  \ VS  \ Total \ Deaths}$
+## $\color{orange}{\textrm{Total Cases VS Total Deaths.}}$
+
 - What does the mortality look like?
 
 ```
@@ -122,7 +123,8 @@ In Brazil, as of 12/16/2022, Brazil had close to 36 million registered cases. Cl
 
 <p align="center"><img src="/images/maracana.jpeg" width="60%"/></p>
 
-## ${\color{orange}- Total  \ Cases  \ VS  \ Population}$
+## $\color{orange}{\textrm{Total Cases VS Population.}}$
+
 - What (rough) percentage of the population got infected?
 	- Very similar to the last query, our last column is a ratio of the 2 previous ones.
 
@@ -150,6 +152,5 @@ order by 1,2
 	> __Note__ at this point we must realize that SQL enables us to put the data under a microscope and query exactly what we want to see for, say, a specific range of date or a specific location. Later, however, we can input this same data into Tableau and get a bird-eye's view of the situation. Perhaps, even.. animate a global map?
 
 ---
-
 
 ## $\color{orange}{\textrm{Looking at countries with highest infection rate compared to population.}}$
