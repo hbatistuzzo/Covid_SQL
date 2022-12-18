@@ -5,6 +5,8 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/hbatistuzzo/Covid_SQL)
 ![GitHub last commit](https://img.shields.io/github/last-commit/hbatistuzzo/Covid_SQL)
 
+> __Warning__ In Progress!
+
 # Project objective
 
 **Exploratory Analysis of a Covid-19 Dataset using SQL** :hospital:
