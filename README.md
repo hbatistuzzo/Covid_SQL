@@ -97,4 +97,4 @@ order by 1,2
 - Brazil:
 	- As of 12/16/2022, Brazil had close to 36 million registered cases. Close to 700.000 registered deaths.
 	- Roughly 10 Maracanã stadiums packed full. Most of these deaths avoidable after the development of a number of vaccines.
-<p align="right"><img src="images/maracana.jpeg"width="100%"/></p>
+<p align="right"><img src="images/maracana.jpeg" width="100%"/></p>
