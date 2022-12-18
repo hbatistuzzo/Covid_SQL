@@ -5,6 +5,10 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/hbatistuzzo/Covid_SQL)
 ![GitHub last commit](https://img.shields.io/github/last-commit/hbatistuzzo/Covid_SQL)
 
+<span style="color:red">
+Text_content
+</style>
+
 > __Warning__ In Progress!
 
 # Project objective
