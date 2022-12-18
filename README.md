@@ -148,5 +148,5 @@ order by 1,2
 - The last line being the most useful here, we see that almost 17% of the country registered Covid cases. This number is probably over 1/5 considering that a lot of patients were asymptomatic (or decided not to check into a hospital).
 	> __Note__ at this point we must realize that SQL enables us to put the data under a microscope and query exactly what we want to see for, say, a specific range of date or a specific location. Later, however, we can input this same data into Tableau and get a bird-eye's view of the situation. Perhaps, even.. animate a global map?
 
-{\color{blue}Looking at countires with highest infection rate compared to population.}
+${\color{blue}Looking at countires with highest infection rate compared to population.}$
 
