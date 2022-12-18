@@ -96,5 +96,5 @@ order by 1,21:16 AM 12/18/2022
 	- Yet we are left to wonder the macabre outcomes that would result from a more lethal disease.
 - Brazil:
 	- As of 12/16/2022, Brazil had close to 36 million registered cases. Close to 700.000 registered deaths.
+	<p align="right"><img src="images/maracana.jpeg" width="40%" alt="Logo"></p>
 	- Roughly 10 Maracanã stadiums packed full. Most of these deaths avoidable after the development of a number of vaccines.
-<p align="right"><img src="images/maracana.jpeg" width="40%" alt="Logo"></p>
