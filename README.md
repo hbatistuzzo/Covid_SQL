@@ -88,9 +88,10 @@ Anyway. With that out of the way, we are ready to run some queries. The syntax i
 
 # Queries
 
-- These will be focused on Brazillian cases, though the syntax is very easily changed on the sql file 'SQL_covid.sql'.
+- These will be focused on Brazillian cases, though the syntax is very easily changed on the sql file `SQL_covid.sql`.
 
-### Total Cases vs Total Deaths. What does the mortality look like?
+## ${\color{orange}- Total  \ Cases  \ VS  \ Total \ Deaths}$
+- What does the mortality look like?
 
 ```
 SELECT Location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as 'death%'
@@ -121,9 +122,9 @@ In Brazil, as of 12/16/2022, Brazil had close to 36 million registered cases. Cl
 
 <p align="center"><img src="/images/maracana.jpeg" width="60%"/></p>
 
-### Total Cases vs Population. What (rough) percentage of the population got infected
-
-- Very similar to the last query, our last column is a ratio of the 2 previous ones.
+## ${\color{orange}- Total  \ Cases  \ VS  \ Population}$
+- What (rough) percentage of the population got infected?
+	- Very similar to the last query, our last column is a ratio of the 2 previous ones.
 
 ```
 SELECT Location, date, total_cases, Population, (total_cases/Population)*100 as 'case%'
@@ -147,6 +148,7 @@ order by 1,2
 
 - The last line being the most useful here, we see that almost 17% of the country registered Covid cases. This number is probably over 1/5 considering that a lot of patients were asymptomatic (or decided not to check into a hospital).
 	> __Note__ at this point we must realize that SQL enables us to put the data under a microscope and query exactly what we want to see for, say, a specific range of date or a specific location. Later, however, we can input this same data into Tableau and get a bird-eye's view of the situation. Perhaps, even.. animate a global map?
+--
 
 ## ${\color{orange}- Looking  \ at  \ countries  \ with  \ highest  \ infection  \ rate  \ compared  \ to  \ population.}$
 
