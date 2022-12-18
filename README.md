@@ -124,6 +124,8 @@ In Brazil, as of 12/16/2022, Brazil had close to 36 million registered cases. Cl
 
 <p align="center"><img src="/images/maracana.jpeg" width="60%"/></p>
 
+---
+
 ## $\color{orange}{\textrm{Total Cases VS Population.}}$
 
 - What (rough) percentage of the population got infected?
