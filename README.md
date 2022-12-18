@@ -84,6 +84,8 @@ Anyway. With that out of the way, we are ready to run some queries. The syntax i
 
 ## Queries
 
+- These will be focused on Brazillian cases, though the syntax is very easily changed on the sql file 'SQL_covid.sql'.
+
 ### Looking at Total Cases vs Total Deaths. What does the mortality look like?
 
 SELECT Location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as 'death%'
@@ -113,16 +115,22 @@ In Brazil, as of 12/16/2022, Brazil had close to 36 million registered cases. Cl
 
 <p align="center"><img src="/images/maracana.jpeg" width="60%"/></p>
 
-### Looking at Total Cases vs Total Deaths. What does the mortality look like?
+### Total Cases vs Population. What (rough) percentage of the population got infected
 
-| Location | Date                    | total_cases | Population | case%             |
-|----------|-------------------------|-------------|------------|-------------------|
-| Brazil   | 2020-02-26 00:00:00.000 | 1           | 215313504  | NULL              |
-| Brazil   | 2020-02-27 00:00:00.000 | 1           | 215313504  | NULL              |
-| Brazil   | 2020-02-28 00:00:00.000 | 1           | 215313504  | NULL              |
-| Brazil   | 2020-02-29 00:00:00.000 | 2           | 215313504  | NULL              |
-| ---      | ---                     | ---         | ---        | ---               |
-| Brazil   | 2022-12-13 00:00:00.000 | 35696918    | 215313504  | 0.321010056108696 |
-| Brazil   | 2022-12-14 00:00:00.000 | 35751411    | 215313504  | 0.32113591909219  |
-| Brazil   | 2022-12-15 00:00:00.000 | 35809832    | 215313504  | 0.321230200220048 |
-| Brazil   | 2022-12-16 00:00:00.000 | 35869526    | 215313504  | 0.321303581590498 |
+| Location | Date                    | total_cases | Population | death%               |
+|----------|-------------------------|-------------|------------|----------------------|
+| Brazil   | 2020-02-26 00:00:00.000 | 1           | 215313504  | 4.64439053483612E-07 |
+| Brazil   | 2020-02-27 00:00:00.000 | 1           | 215313504  | 4.64439053483612E-07 |
+| Brazil   | 2020-02-28 00:00:00.000 | 1           | 215313504  | 4.64439053483612E-07 |
+| Brazil   | 2020-02-29 00:00:00.000 | 2           | 215313504  | 9.28878106967225E-07 |
+| ---      | ---                     | ---         | ---        | ---                  |
+| Brazil   | 2022-12-13 00:00:00.000 | 35696918    | 215313504  | 16.5790428082021     |
+| Brazil   | 2022-12-14 00:00:00.000 | 35751411    | 215313504  | 16.6043514855436     |
+| Brazil   | 2022-12-15 00:00:00.000 | 35809832    | 215313504  | 16.6314844794872     |
+| Brazil   | 2022-12-16 00:00:00.000 | 35869526    | 215313504  | 16.6592087043458     |
+
+
+- The last line being the most useful here, we see that almost 17% of the country registered Covid cases. This number is probably over 1/5 considering that a lot of patients were asymptomatic (or decided not to check into a hospital).
+	- Note: at this point we must realize that SQL enables us to put the data under a microscope and query exactly what we want to see for, say, a specific range of date or a specific location. Later, however, we can input this same data into Tableau and get a bird-eye's view of the situation. Perhaps, even.. animate a global map?
+
+### Total Cases vs Population. What (rough) percentage of the population got infected
