@@ -58,6 +58,10 @@ I have artificially divided the original dataset with all the info (available on
 
 <p align="center"><img src="images/sql2.png"width="100%"/></p>
 
+... Which will also fail unless you have previously installed the Microsoft Integration Services. You hadn't? Well uninstall Microsoft Server entirely and follow the custom instructions included in [this cryptic page from Microsoft itself](https://learn.microsoft.com/en-us/sql/integration-services/install-windows/install-integration-services?view=sql-server-ver16).
+
+
+
 ... Which works! Will this be the last time we are confounded by this Microsoft treachery? I highly doubt it. Anyway:
 
 
