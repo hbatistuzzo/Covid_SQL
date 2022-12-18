@@ -95,5 +95,5 @@ order by 1,21:16 AM 12/18/2022
 	- Lethality is not a significative measure when gauging the impact that a pandemic will have on society as a whole.
 	- Yet we are left to wonder the macabre outcomes that would result from a more lethal disease.
 
-|---|---|
-In Brazil, as of 12/16/2022, Brazil had close to 36 million registered cases. Close to 700.000 registered deaths. Roughly 10 Maracanã stadiums packed full. Most of these deaths avoidable after the development of a number of vaccines. | ![Flowers](/images/maracana.jpeg) |
+<div style="text-align: right"><img src="/images/maracana.jpeg" width="100" /></div>
+In Brazil, as of 12/16/2022, Brazil had close to 36 million registered cases. Close to 700.000 registered deaths. Roughly 10 Maracanã stadiums packed full. Most of these deaths avoidable after the development of a number of vaccines.
