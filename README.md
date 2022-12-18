@@ -88,11 +88,11 @@ Anyway. With that out of the way, we are ready to run some queries. The syntax i
 
 ### Looking at Total Cases vs Total Deaths. What does the mortality look like?
 
-'''
+```
 SELECT Location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as 'death%'
 FROM Covid..covid_deaths
 order by 1,2
-'''
+```
 
 | Location | Date                    | total_cases | total_deaths | death%           |
 |----------|-------------------------|-------------|--------------|------------------|
@@ -121,12 +121,12 @@ In Brazil, as of 12/16/2022, Brazil had close to 36 million registered cases. Cl
 
 - Very similar to the last query, our last column is a ratio of the 2 previous ones.
 
-'''
+```
 SELECT Location, date, total_cases, Population, (total_cases/Population)*100 as 'case%'
 FROM Covid..covid_deaths
 WHERE location = 'Brazil'
 order by 1,2 
-'''
+```
 
 | Location | Date                    | total_cases | Population | cases%               |
 |----------|-------------------------|-------------|------------|----------------------|
