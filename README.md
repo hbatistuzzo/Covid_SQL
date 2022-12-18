@@ -81,8 +81,10 @@ Anyway. With that out of the way, we are ready to run some queries. The syntax i
 - You can comment text from the editor with the command `ctrl-K --> ctrl-C`, which is absolutely bananas. Hard to forget though.
 
 ---
+---
+---
 
-## Queries
+# Queries
 
 - These will be focused on Brazillian cases, though the syntax is very easily changed on the sql file 'SQL_covid.sql'.
 
