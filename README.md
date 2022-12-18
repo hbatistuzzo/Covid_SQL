@@ -74,7 +74,7 @@ I have artificially divided the original dataset with all the info (available on
 Anyway. With that out of the way, we are ready to run some queries. The syntax is, as usual, very similar to that used in other RMDBs.
 - The feature to display more two or more outputs at the same time can be very convenient too:
 
-<p align="center"><img src="images/sql3.png"width="100%"/></p>
+<p align="center"><img src="images/sql4.png"width="100%"/></p>
 
 - You can comment text from the editor with the command `ctrl-K --> ctrl-C`, which is absolutely bananas. Hard to forget though.
 
