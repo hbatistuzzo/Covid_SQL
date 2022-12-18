@@ -7,7 +7,7 @@
 
 # Project objective
 
-***Exploratory Analysis of a Covid-19 Dataset using SQL :hospital:***
+**Exploratory Analysis of a Covid-19 Dataset using SQL** :hospital:
 
 I've done this project to showcase my skills related to:
 
@@ -88,7 +88,7 @@ Anyway. With that out of the way, we are ready to run some queries. The syntax i
 
 - These will be focused on Brazillian cases, though the syntax is very easily changed on the sql file 'SQL_covid.sql'.
 
-<span style="color:blue">### Total Cases vs Total Deaths. What does the mortality look like?</span>
+### Total Cases vs Total Deaths. What does the mortality look like?
 
 ```
 SELECT Location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as 'death%'
@@ -144,7 +144,7 @@ order by 1,2
 
 
 - The last line being the most useful here, we see that almost 17% of the country registered Covid cases. This number is probably over 1/5 considering that a lot of patients were asymptomatic (or decided not to check into a hospital).
-	- Note: at this point we must realize that SQL enables us to put the data under a microscope and query exactly what we want to see for, say, a specific range of date or a specific location. Later, however, we can input this same data into Tableau and get a bird-eye's view of the situation. Perhaps, even.. animate a global map?
+	- > __Note__ at this point we must realize that SQL enables us to put the data under a microscope and query exactly what we want to see for, say, a specific range of date or a specific location. Later, however, we can input this same data into Tableau and get a bird-eye's view of the situation. Perhaps, even.. animate a global map?
 
 ### Looking at countires with highest infection rate compared to population.
 
