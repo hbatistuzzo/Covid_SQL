@@ -1,4 +1,4 @@
-<p align="center">$\color{red}{\textbf{COVID-SQL-Project}}$</p>
+# COVID SQL Project
 
 ![GitHub top language](https://img.shields.io/github/languages/top/hbatistuzzo/Covid_SQL)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/hbatistuzzo/Covid_SQL)
