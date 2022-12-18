@@ -84,10 +84,23 @@ Anyway. With that out of the way, we are ready to run some queries. The syntax i
 
 ## Queries
 
--- Looking at Total Cases vs Total Deaths. What does the mortality look like?
+### Looking at Total Cases vs Total Deaths. What does the mortality look like?
+
 SELECT Location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as 'death%'
 FROM Covid..covid_deaths
-order by 1,21:16 AM 12/18/2022
+order by 1,2
+
+| Location | Date                    | total_cases | total_deaths | death%           |
+|----------|-------------------------|-------------|--------------|------------------|
+| Brazil   | 2020-02-26 00:00:00.000 | 1           | NULL         | NULL             |
+| Brazil   | 2020-02-27 00:00:00.000 | 1           | NULL         | NULL             |
+| Brazil   | 2020-02-28 00:00:00.000 | 1           | NULL         | NULL             |
+| Brazil   | 2020-02-29 00:00:00.000 | 2           | NULL         | NULL             |
+| ---      | ---                     | ---         | ---          | ---              |
+| Brazil   | 2022-12-13 00:00:00.000 | 35696918    | 691178       | 1.93623998576012 |
+| Brazil   | 2022-12-14 00:00:00.000 | 35751411    | 691449       | 1.93404674293834 |
+| Brazil   | 2022-12-15 00:00:00.000 | 35809832    | 691652       | 1.9314583771295  |
+| Brazil   | 2022-12-16 00:00:00.000 | 35869526    | 691810       | 1.92868453293751 |
 
 **insights**
 - Most countries attain a Death% of ~2-4% after the infection is widespread.
@@ -99,3 +112,17 @@ order by 1,21:16 AM 12/18/2022
 In Brazil, as of 12/16/2022, Brazil had close to 36 million registered cases. Close to 700.000 registered deaths. Roughly 10 Maracanã stadiums packed full. Most of these deaths avoidable after the development of a number of vaccines.
 
 <p align="center"><img src="/images/maracana.jpeg" width="60%"/></p>
+
+### Looking at Total Cases vs Total Deaths. What does the mortality look like?
+
+| Location | Date                    | total_cases | Population | case%             |
+|----------|-------------------------|-------------|------------|-------------------|
+| Brazil   | 2020-02-26 00:00:00.000 | 1           | 215313504  | NULL              |
+| Brazil   | 2020-02-27 00:00:00.000 | 1           | 215313504  | NULL              |
+| Brazil   | 2020-02-28 00:00:00.000 | 1           | 215313504  | NULL              |
+| Brazil   | 2020-02-29 00:00:00.000 | 2           | 215313504  | NULL              |
+| ---      | ---                     | ---         | ---        | ---               |
+| Brazil   | 2022-12-13 00:00:00.000 | 35696918    | 215313504  | 0.321010056108696 |
+| Brazil   | 2022-12-14 00:00:00.000 | 35751411    | 215313504  | 0.32113591909219  |
+| Brazil   | 2022-12-15 00:00:00.000 | 35809832    | 215313504  | 0.321230200220048 |
+| Brazil   | 2022-12-16 00:00:00.000 | 35869526    | 215313504  | 0.321303581590498 |
