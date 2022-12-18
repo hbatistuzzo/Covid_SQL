@@ -1,5 +1,5 @@
-# $\color{red}{\textrm{COVID_SQL}}$ :hospital:
- 
+# $\color{red}{COVID_SQL}$
+
 ![GitHub top language](https://img.shields.io/github/languages/top/hbatistuzzo/Covid_SQL)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/hbatistuzzo/Covid_SQL)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/hbatistuzzo/Covid_SQL)
