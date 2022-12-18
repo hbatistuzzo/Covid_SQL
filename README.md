@@ -5,6 +5,21 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/hbatistuzzo/Covid_SQL)
 ![GitHub last commit](https://img.shields.io/github/last-commit/hbatistuzzo/Covid_SQL)
 
+# Project objective
+
+Analysis of data for COVID Deaths and Vaccinations using SQL.
+I've done this project to showcase my skills related to:
+
+- Joins
+- CTE's
+- Temporary Tables
+- Windows Functions
+- Aggregate Functions
+- Creating Views
+- Converting Data Types
+
+Datasets can be found at : https://ourworldindata.org/covid-deaths (btw, super useful repository for projects in data science 🤘)
+
 ---
 
 # Technologies
@@ -17,3 +32,5 @@
 	- Matplotlib 3.5.2
 	- Scikit-learn 1.1
 - Tableau 2022.3
+
+---
