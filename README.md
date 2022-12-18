@@ -69,10 +69,12 @@ I have artificially divided the original dataset with all the info (available on
 
 - While you reinstall everything, realize that Steve Jobs might have had a point after all, as only savants could possibly decypher these instructions from Microsoft on a first try.
 - Eons will have passed, but time flows like a river and you will find yourself (hopefully, maybe) in possession of a semi-working version of Microsoft Server. I sure hope you have read the fine print of the terms and conditions where our Microsoft overlords ask nothing more from you than your undying loyalty, pity donations, and several liters of your blood to fuel their genesis device.
+- Finally, fire up the import/export wizard and retrieve the .xlsx's. Will this be the last time we are confounded by this Microsoft treachery? I highly doubt it.
 
+Anyway. With that out of the way, we are ready to run some queries. The syntax is, as usual, very similar to that used in other RMDBs.
+- The feature to display more two or more outputs at the same time can be very convenient too:
 
-... Which works! Will this be the last time we are confounded by this Microsoft treachery? I highly doubt it. Anyway:
+<p align="center"><img src="images/sql3.png"width="100%"/></p>
 
-
-
+- You can comment text from the editor with the command `ctrl-K --> ctrl-C`, which is absolutely bananas. Hard to forget though.
 
