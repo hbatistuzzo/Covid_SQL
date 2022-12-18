@@ -1,13 +1,9 @@
-<p align="center">$\large{\color{red}{COVID-SQL-Project}}$</p>
+<p align="center">$\color{red}{COVID-SQL-Project{\huge size}}$</p>
 
 ![GitHub top language](https://img.shields.io/github/languages/top/hbatistuzzo/Covid_SQL)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/hbatistuzzo/Covid_SQL)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/hbatistuzzo/Covid_SQL)
 ![GitHub last commit](https://img.shields.io/github/last-commit/hbatistuzzo/Covid_SQL)
-
-<span style="color:red">
-Text_content
-</style>
 
 > __Warning__ In Progress!
 
