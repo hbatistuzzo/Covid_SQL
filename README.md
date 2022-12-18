@@ -58,7 +58,7 @@ I have artificially divided the original dataset with all the info (available on
 
 <p align="center"><img src="images/sql2.png"width="100%"/></p>
 
-... Which will also fail unless you have previously installed the Microsoft Integration Services.
+- ... Which will also fail unless you have previously installed the Microsoft Integration Services.
 	- You hadn't? Well uninstall Microsoft Server entirely and follow the custom instructions included in [this cryptic page from Microsoft itself](https://learn.microsoft.com/en-us/sql/integration-services/install-windows/install-integration-services?view=sql-server-ver16).
 	- You might as well go prepare a cup of coffee and check your blood pressure in the meantime because this unninstaller will take its sweet time.
 	- Now you are ready to perform a custom install. Mind the warnings that your Microsoft Firewall will probably block some of the ports necessary to run this whole operation.
