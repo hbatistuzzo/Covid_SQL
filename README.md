@@ -7,7 +7,8 @@
 
 # Project objective
 
-*** Exploratory Analysis of a Covid-19 Dataset using SQL ***
+***Exploratory Analysis of a Covid-19 Dataset using SQL***
+
 I've done this project to showcase my skills related to:
 
 - Joins
