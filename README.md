@@ -87,7 +87,7 @@ Anyway. With that out of the way, we are ready to run some queries. The syntax i
 -- Looking at Total Cases vs Total Deaths. What does the mortality look like?
 SELECT Location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as 'death%'
 FROM Covid..covid_deaths
-order by 1,2
+order by 1,21:16 AM 12/18/2022
 
 **insights**
 - Most countries attain a Death% of ~2-4% after the infection is widespread.
@@ -97,4 +97,4 @@ order by 1,2
 - Brazil:
 	- As of 12/16/2022, Brazil had close to 36 million registered cases. Close to 700.000 registered deaths.
 	- Roughly 10 Maracanã stadiums packed full. Most of these deaths avoidable after the development of a number of vaccines.
-<p align="right"><img src="images/maracana.jpeg" width="100%"/></p>
+<p align="right"><img src="images/maracana.jpeg" width="40%" alt="Logo"></p>
