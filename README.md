@@ -21,7 +21,8 @@ I've done this project to showcase my skills related to:
 - Creating Views
 - Converting Data Types
 
-Datasets can be found at : https://ourworldindata.org/covid-deaths (btw, super useful repository for projects in data science 🤘)
+Datasets can be found at : https://ourworldindata.org/covid-deaths
+- (btw, super useful repository for projects in data science 🤘)
 
 ---
 
