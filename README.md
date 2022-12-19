@@ -156,3 +156,55 @@ order by 1,2
 ---
 
 ## $\color{orange}{\textrm{Looking at countries with highest infection rate compared to population.}}$
+
+```
+SELECT Location, Population, MAX(total_cases) as 'Highest_Infection_Count', MAX((total_cases/Population)*100) as '%_pop_infected'
+FROM Covid..covid_deaths
+GROUP BY Location, Population
+ORDER by 4 DESC 
+```
+
+| Location       | Population | Highest_Infection_Count | %_pop_infected   |
+|----------------|------------|-------------------------|------------------|
+| Cyprus         | 896007     | 625562                  | 69.8166420574839 |
+| San Marino     | 33690      | 22615                   | 67.1267438409024 |
+| Faeroe Islands | 53117      | 34658                   | 65.2484138787959 |
+| Austria        | 8939617    | 5639992                 | 63.0898616797565 |
+| Gibraltar      | 32677      | 20252                   | 61.9763136150809 |
+| Slovenia       | 2119843    | 1285920                 | 60.6610961283453 |
+| Andorra        | 79843      | 47606                   | 59.6245131069724 |
+| Brunei         | 449002     | 264490                  | 58.9061964089247 |
+| Denmark        | 5882259    | 3371791                 | 57.3213624221579 |
+| France         | 67813000   | 38841776                | 57.2777726984502 |
+
+- As of Dec. 2022, a staggering amount of people has been infected with Covid. Since many cases are recorded as re-infection, this number probably overshoots the mark somewhat.
+	- Does it discern against tourists? Look into.
+
+---
+
+## $\color{orange}{\textrm{Looking at countries with highest death count per population.}}$
+
+```
+SELECT Location, MAX(cast(total_deaths as bigint)) as Total_Death_Count
+FROM Covid..covid_deaths
+GROUP BY Location
+ORDER by 2 DESC 
+```
+> __Warning__ total_deaths is an nvarchar(255) attribute originally, so we need to cast it as an integer in order to make this work.
+> __Warning__ the WHERE clause is necessary to avoid selecting groupings of countries e.g. by continents.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
