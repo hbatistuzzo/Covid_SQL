@@ -368,3 +368,30 @@ ORDER BY 2,3
 ```
 
 - I find it to be more customizable this way, though it is more verbose (especially since the table needs to be created and the data types specified etc).
+
+---
+
+### Finally, a view to store data for later visualizations
+
+```
+CREATE VIEW percent_pop_vaxx as
+SELECT dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations,
+	SUM(CAST(vac.new_vaccinations as BIGINT)) OVER
+	(PARTITION BY dea.location ORDER BY dea.location, dea.date) as 'total_vaccinations'
+	--,(total_vaccinations/population)*100 as 'percent_pop_vac' -- we wish to do this! CTE!
+FROM Covid..covid_deaths dea
+JOIN Covid..covid_vaccinations vac
+	ON dea.location = vac.location
+	AND dea.date = vac.date
+WHERE dea.continent is not null
+--ORDER BY 2,3
+```
+
+- Running the code above, SSMS tells us that:
+
+```
+Commands completed successfully.
+Completion time: 2022-12-19T01:10:12.1148205-03:00
+```
+
+And now we can find our new view as we refresh our Object Explorer!
