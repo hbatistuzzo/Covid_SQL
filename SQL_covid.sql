@@ -84,9 +84,37 @@
 
 -- CTE to use our created variable total_vaccinations
 
-WITH pop_vs_vac (continent, location, date, population, new_vaccinations, total_vaccinations)
-AS -- and I will copy the query above
+--WITH pop_vs_vac (continent, location, date, population, new_vaccinations, total_vaccinations)
+--AS -- and I will copy the query above
+--(
+--SELECT dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations,
+--	SUM(CAST(vac.new_vaccinations as BIGINT)) OVER
+--	(PARTITION BY dea.location ORDER BY dea.location, dea.date) as 'total_vaccinations'
+--	--,(total_vaccinations/population)*100 as 'percent_pop_vac' -- we wish to do this! CTE!
+--FROM Covid..covid_deaths dea
+--JOIN Covid..covid_vaccinations vac
+--	ON dea.location = vac.location
+--	AND dea.date = vac.date
+--WHERE dea.continent is not null
+----ORDER BY 2,3 --this wont work here
+--)
+--SELECT *, (total_vaccinations/population)*100 as 'percent_pop_vac' FROM pop_vs_vac
+--ORDER BY 2,3
+
+-- Another option would to be to use a Temp table.
+
+DROP TABLE IF EXISTS #percent_pop_vaxx -- just in case of alterations
+CREATE TABLE #percent_pop_vaxx
 (
+continent nvarchar(255),
+location nvarchar(255),
+date datetime,
+population numeric,
+new_vaccinations bigint,
+total_vaccinations bigint
+)
+INSERT INTO #percent_pop_vaxx
+-- The original query remains the same
 SELECT dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations,
 	SUM(CAST(vac.new_vaccinations as BIGINT)) OVER
 	(PARTITION BY dea.location ORDER BY dea.location, dea.date) as 'total_vaccinations'
@@ -96,7 +124,8 @@ JOIN Covid..covid_vaccinations vac
 	ON dea.location = vac.location
 	AND dea.date = vac.date
 WHERE dea.continent is not null
---ORDER BY 2,3 --this wont work here
-)
-SELECT *, (total_vaccinations/population)*100 as 'percent_pop_vac' FROM pop_vs_vac
-ORDER BY 2,3
+-- ORDER BY 2,3 
+
+SELECT *, (total_vaccinations/population)*100 as 'percent_pop_vac'
+FROM #percent_pop_vaxx
+ORDER BY 2,3 

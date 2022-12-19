@@ -336,4 +336,35 @@ ORDER BY 2,3 --this wont work here
 - Now, this _would_ work fine except that the rolling count of vaccinations include doses other than the first. Hence some values eventually extrapolate 100%.
 	- Still... It works. We would need additional data to counter this. Information on the number of people vaccinated regardless of the # of doses.
 
+- Yet _another option_ would be to use a temp table, in which case our structure becomes:
 
+```
+DROP TABLE IF EXISTS #percent_pop_vaxx -- just in case of alterations
+CREATE TABLE #percent_pop_vaxx
+(
+continent nvarchar(255),
+location nvarchar(255),
+date datetime,
+population numeric,
+new_vaccinations bigint,
+total_vaccinations bigint
+)
+INSERT INTO #percent_pop_vaxx
+-- The original query remains the same
+SELECT dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations,
+	SUM(CAST(vac.new_vaccinations as BIGINT)) OVER
+	(PARTITION BY dea.location ORDER BY dea.location, dea.date) as 'total_vaccinations'
+	--,(total_vaccinations/population)*100 as 'percent_pop_vac' -- we wish to do this! CTE!
+FROM Covid..covid_deaths dea
+JOIN Covid..covid_vaccinations vac
+	ON dea.location = vac.location
+	AND dea.date = vac.date
+WHERE dea.continent is not null
+-- ORDER BY 2,3 
+
+SELECT *, (total_vaccinations/population)*100 as 'percent_pop_vac'
+FROM #percent_pop_vaxx
+ORDER BY 2,3 
+```
+
+- I find it to be more customizable this way, though it is more verbose (especially since the table needs to be created and the data types specified etc).
