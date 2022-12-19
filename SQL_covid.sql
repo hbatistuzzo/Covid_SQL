@@ -27,9 +27,16 @@
 --GROUP BY Location, Population
 --ORDER by 4 DESC 
 
--- Looking at countries with highest death count per population.
-SELECT Location, MAX(cast(total_deaths as INT)) as Total_Death_Count
+---- Looking at countries with highest death count per population.
+--SELECT Location, MAX(cast(total_deaths as INT)) as Total_Death_Count
+--FROM Covid..covid_deaths
+--WHERE continent is not null
+--GROUP BY Location
+--ORDER by 2 DESC
+
+-- What about by continent?
+SELECT location, MAX(CAST(total_deaths as INT)) as TotalDeathCount
 FROM Covid..covid_deaths
-WHERE continent is not null
-GROUP BY Location
-ORDER by 2 DESC 
+WHERE continent is null
+GROUP BY location
+ORDER BY 2 DESC

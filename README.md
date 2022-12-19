@@ -220,7 +220,35 @@ ORDER by 2 DESC
 - The US, as expected, leads the world in deaths due to the sheer amount of transport/contact of people.
 - Despite having about 1/7 of India's population, Brazil has surpassed it in deaths, sadly reflecting not the unpreparedness of our public health system (quite the opposite, as it is a world standard in quality together with the UK's NHS), but rather the systematic negationist views of the federal government when dealing with the pandemic.
 
+---
 
+## $\color{orange}{\textrm{What about by continent?}}$
+
+```
+SELECT location, MAX(CAST(total_deaths as INT)) as TotalDeathCount
+FROM Covid..covid_deaths
+WHERE continent is null
+GROUP BY location
+ORDER BY 2 DESC
+```
+
+| Location            | Total_Death_Count |
+|---------------------|-------------------|
+| World               | 6664216           |
+| High income         | 2765725           |
+| Upper middle income | 2507665           |
+| Europe              | 1992175           |
+| North America       | 1545604           |
+| Asia                | 1508982           |
+| Lower middle income | 1342989           |
+| South America       | 1338288           |
+| European Union      | 1183906           |
+| Africa              | 257379            |
+| Low income          | 47927             |
+| Oceania             | 21773             |
+| International       | 15                |
+
+---
 
 
 
