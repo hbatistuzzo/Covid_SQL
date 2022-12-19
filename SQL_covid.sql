@@ -34,9 +34,35 @@
 --GROUP BY Location
 --ORDER by 2 DESC
 
--- What about by continent?
-SELECT location, MAX(CAST(total_deaths as INT)) as TotalDeathCount
-FROM Covid..covid_deaths
-WHERE continent is null
-GROUP BY location
-ORDER BY 2 DESC
+---- What about by continent?
+--SELECT location, MAX(CAST(total_deaths as INT)) as TotalDeathCount
+--FROM Covid..covid_deaths
+--WHERE continent is null
+--GROUP BY location
+--ORDER BY 2 DESC
+
+
+---- GLOBAL NUMBERS
+--SELECT date, SUM(new_cases) as 'total_cases', SUM(CAST(new_deaths as int)) as 'total_deaths', SUM(CAST(new_deaths as INT))/SUM(new_cases)*100 as 'death%' 
+--FROM Covid..covid_deaths
+--WHERE continent is not null
+--GROUP BY date
+--ORDER BY 1,2
+
+---- Looking at Total Population VS Vaccination
+--SELECT dea.continent, dea.location, dea.date, vac.new_vaccinations
+--FROM Covid..covid_deaths dea
+--JOIN Covid..covid_vaccinations vac
+--	ON dea.location = vac.location
+--	AND dea.date = vac.date -- location and date
+--WHERE dea.continent is not null
+--ORDER BY 2,3
+
+SELECT dea.continent, dea.location, dea.date, vac.new_vaccinations,
+	SUM(CAST(vac.new_vaccinations as BIGINT)) OVER (PARTITION BY dea.location) as 'total_vaccinations'
+FROM Covid..covid_deaths dea
+JOIN Covid..covid_vaccinations vac
+	ON dea.location = vac.location
+	AND dea.date = vac.date -- location and date
+WHERE dea.continent is not null
+ORDER BY 2,3

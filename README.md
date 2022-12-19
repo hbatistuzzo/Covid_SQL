@@ -250,10 +250,50 @@ ORDER BY 2 DESC
 
 ---
 
+# $\color{red}{\textrm{Joining the 2 datasets: deaths and vaccinations}}$
 
+## $\color{orange}{\textrm{Looking at Total Population VS Vaccination}}$
 
+- By itself, the following query gives us, for each country, ordered by date, the increments of new vaccinations every day:
 
+```
+SELECT dea.continent, dea.location, dea.date, vac.new_vaccinations
+FROM Covid..covid_deaths dea
+JOIN Covid..covid_vaccinations vac
+	ON dea.location = vac.location
+	AND dea.date = vac.date -- location and date
+WHERE dea.continent is not null
+ORDER BY 2,3
+```
 
+- Which is great, but.. It's much more useful to display an additional column with grouped information. Enter the `partition by` clause.
 
+```
+SELECT dea.continent, dea.location, dea.date, vac.new_vaccinations,
+	SUM(CAST(vac.new_vaccinations as BIGINT)) OVER (PARTITION BY dea.location)
+FROM Covid..covid_deaths dea
+JOIN Covid..covid_vaccinations vac
+	ON dea.location = vac.location
+	AND dea.date = vac.date -- location and date
+WHERE dea.continent is not null
+ORDER BY 2,3
+```
 
+The special 2nd line in the previous query repeats the total of vaccinated people FOR each location EVERY day i.e.
 
+| Location   | date                    | new_vaccinations | total_vaccinations |
+|------------|-------------------------|------------------|--------------------|
+| Azerbaijan | 2021-03-09 00:00:00.000 | NULL             | 10719068           |
+| Azerbaijan | 2021-03-10 00:00:00.000 | 17139            | 10719068           |
+| Azerbaijan | 2021-03-11 00:00:00.000 | 8214             | 10719068           |
+| Azerbaijan | 2021-03-12 00:00:00.000 | 7039             | 10719068           |
+| Bahrain    | 2021-03-06 00:00:00.000 | NULL             | 2954589            |
+| Bahrain    | 2021-03-07 00:00:00.000 | 3388             | 2954589            |
+| Bahrain    | 2021-03-08 00:00:00.000 | 2513             | 2954589            |
+| Bahrain    | 2021-03-09 00:00:00.000 | 2139             | 2954589            |
+| Brazil     | 2021-01-17 00:00:00.000 | NULL             | 455521643          |
+| Brazil     | 2021-01-18 00:00:00.000 | 997              | 455521643          |
+| Brazil     | 2021-01-19 00:00:00.000 | 12418            | 455521643          |
+| Brazil     | 2021-01-20 00:00:00.000 | 92297            | 455521643          |
+
+- Once the location changes, the total_vaccinations info necessarily updates.
