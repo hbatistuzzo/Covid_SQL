@@ -275,6 +275,8 @@ WHERE dea.continent is not null
 ORDER BY 2,3
 ```
 
+> __Warning__ By 2022 the sum value of new_vaccinations has exceeded 2,147,483,647 people. So instead of converting it to "int" as before, we will need to convert to "bigint".
+
 The special 2nd line in the previous query repeats the total of vaccinated people FOR each location EVERY day i.e.
 
 | Location   | date                    | new_vaccinations | total_vaccinations |
@@ -292,4 +294,4 @@ The special 2nd line in the previous query repeats the total of vaccinated peopl
 | Brazil     | 2021-01-19 00:00:00.000 | 12418            | 455521643          |
 | Brazil     | 2021-01-20 00:00:00.000 | 92297            | 455521643          |
 
-- Once the location changes, the total_vaccinations info necessarily updates.
+- Once the location changes, the total_vaccinations info necessarily updates thanks to the partitionby.
