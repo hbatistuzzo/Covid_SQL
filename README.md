@@ -194,11 +194,31 @@ ORDER by 2 DESC
 
 > __Warning__ the WHERE clause is necessary to avoid selecting groupings of countries e.g. by continents.
 
+| Location       | Total_Death_Count |
+|----------------|-------------------|
+| United States  | 1087398           |
+| Brazil         | 691810            |
+| India          | 530667            |
+| Russia         | 384974            |
+| Mexico         | 330743            |
+| Peru           | 217821            |
+| United Kingdom | 213148            |
+| Italy          | 183138            |
+| France         | 160428            |
+| Indonesia      | 160362            |
+| Germany        | 159884            |
+| Iran           | 144659            |
+| Colombia       | 141881            |
+| Argentina      | 130041            |
+| Ukraine        | 118613            |
+| Poland         | 118419            |
+| Spain          | 116658            |
+| South Africa   | 102568            |
+| Turkey         | 101203            |
+| Romania        | 67310             |
 
-
-
-
-
+- The US, as expected, leads the world in deaths due to the sheer amount of transport/contact of people.
+- Despite having about 1/7 of India's population, Brazil has surpassed it in deaths, sadly reflecting not the unpreparedness of our public health system (quite the opposite, as it is a world standard in quality together with the UK's NHS), but rather the systematic negationist views of the federal government when dealing with the pandemic.
 
 
 
