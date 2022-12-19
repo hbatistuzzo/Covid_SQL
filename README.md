@@ -191,6 +191,7 @@ GROUP BY Location
 ORDER by 2 DESC 
 ```
 > __Warning__ total_deaths is an nvarchar(255) attribute originally, so we need to cast it as an integer in order to make this work.
+
 > __Warning__ the WHERE clause is necessary to avoid selecting groupings of countries e.g. by continents.
 
 
