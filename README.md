@@ -30,11 +30,7 @@ Datasets can be found at : https://ourworldindata.org/covid-deaths
 
 - Python 3.8.13
 	- Pandas 1.4.4
-	- Numpy 1.21.5
-	- Pycaret 2.3.10
-	- Seaborn 0.11.2
 	- Matplotlib 3.5.2
-	- Scikit-learn 1.1
 - Tableau 2022.3
 - Microsoft SQL Server Management Studio (SSMS) 18.12.1
 
@@ -77,7 +73,7 @@ I have artificially divided the original dataset with all the info (available on
 ---
 
 Anyway. With that out of the way, we are ready to run some queries. The syntax is, as usual, very similar to that used in other RMDBs.
-- The feature to display more two or more outputs at the same time can be very convenient too:
+- The feature to display two or more outputs at the same time can be very convenient too:
 
 <p align="center"><img src="images/sql4.png"width="100%"/></p>
 
