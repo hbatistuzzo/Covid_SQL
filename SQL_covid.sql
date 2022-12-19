@@ -58,8 +58,11 @@
 --WHERE dea.continent is not null
 --ORDER BY 2,3
 
+
+-- A partition by is super useful here
 SELECT dea.continent, dea.location, dea.date, vac.new_vaccinations,
-	SUM(CAST(vac.new_vaccinations as BIGINT)) OVER (PARTITION BY dea.location) as 'total_vaccinations'
+	SUM(CAST(vac.new_vaccinations as BIGINT)) OVER
+	(PARTITION BY dea.location ORDER BY dea.location, dea.date) as 'total_vaccinations'
 FROM Covid..covid_deaths dea
 JOIN Covid..covid_vaccinations vac
 	ON dea.location = vac.location

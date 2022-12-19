@@ -294,4 +294,21 @@ The special 2nd line in the previous query repeats the total of vaccinated peopl
 | Brazil     | 2021-01-19 00:00:00.000 | 12418            | 455521643          |
 | Brazil     | 2021-01-20 00:00:00.000 | 92297            | 455521643          |
 
-- Once the location changes, the total_vaccinations info necessarily updates thanks to the partitionby.
+- Once the location changes, the total_vaccinations info necessarily updates thanks to the partition by clause.
+- But _even better_, we can apply 'ORDER BY dea.location, dea.date' to the partition date, and it will increment the sum gradually:
+
+| Location | date                    | new_vaccinations | total_vaccinations |
+|----------|-------------------------|------------------|--------------------|
+| Brazil   | 2021-01-17 00:00:00.000 | NULL             | NULL               |
+| Brazil   | 2021-01-18 00:00:00.000 | 997              | 997                |
+| Brazil   | 2021-01-19 00:00:00.000 | 12418            | 13415              |
+| Brazil   | 2021-01-20 00:00:00.000 | 92297            | 105712             |
+| Brazil   | 2021-01-21 00:00:00.000 | 87875            | 193587             |
+| Brazil   | 2021-01-22 00:00:00.000 | 268570           | 462157             |
+| Brazil   | 2021-01-23 00:00:00.000 | 110999           | 573156             |
+| Brazil   | 2021-01-24 00:00:00.000 | 40686            | 613842             |
+
+- Pretty impressive that Brazil vaccinated over 500.000 people in a single week.
+	- Also, if you guessed that 2021-01-22 was a friday, you would be correct.
+
+
