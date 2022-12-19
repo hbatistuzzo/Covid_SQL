@@ -310,5 +310,30 @@ The special 2nd line in the previous query repeats the total of vaccinated peopl
 
 - Pretty impressive that Brazil vaccinated over 500.000 people in a single week.
 	- Also, if you guessed that 2021-01-22 was a friday, you would be correct.
+- Now, the last entry for total_vaccinations for each country is the total sum of this rolling sum.
+	- We can use that entry _in a query_ and divided it by the population to see what percentage of the country has been vaccinated so far.
+		- Time for CTE's! Or a temp table.
+
+```
+WITH pop_vs_vac (continent, location, date, population, new_vaccinations, total_vaccinations)
+AS -- and I will copy the query above
+(
+SELECT dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations,
+	SUM(CAST(vac.new_vaccinations as BIGINT)) OVER
+	(PARTITION BY dea.location ORDER BY dea.location, dea.date) as 'total_vaccinations'
+	--,(total_vaccinations/population)*100 as 'percent_pop_vac' -- we wish to do this! CTE!
+FROM Covid..covid_deaths dea
+JOIN Covid..covid_vaccinations vac
+	ON dea.location = vac.location
+	AND dea.date = vac.date
+WHERE dea.continent is not null
+--ORDER BY 2,3 --this wont work here
+)
+SELECT *, (total_vaccinations/population)*100 as 'percent_pop_vac' FROM pop_vs_vac
+ORDER BY 2,3 --this wont work here
+```
+
+- Now, this _would_ work fine except that the rolling count of vaccinations include doses other than the first. Hence some values eventually extrapolate 100%.
+	- Still... It works. We would need additional data to counter this. Information on the number of people vaccinated regardless of the # of doses.
 
 
