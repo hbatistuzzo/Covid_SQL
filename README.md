@@ -395,3 +395,12 @@ Completion time: 2022-12-19T01:10:12.1148205-03:00
 ```
 
 And now we can find our new view as we refresh our Object Explorer!
+
+---
+---
+---
+
+# $\color{blue}{\textrm{Tableau Data Viz}}$
+
+- With the queries above ready and working, we can transport some of that info to Tableau.
+
