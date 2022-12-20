@@ -403,4 +403,8 @@ And now we can find our new view as we refresh our Object Explorer!
 # $\color{blue}{\textrm{Tableau Data Viz}}$
 
 - With the queries above ready and working, we can transport some of that info to Tableau.
+- Describing a step-by-step of Tableau mechanics is nearly impossible, but you can feast your eyes on this neat dashboard!
 
+<p align="center"><img src="images/dashie.png" width="100%"/></p>
+
+https://public.tableau.com/app/profile/henrique.batistuzzo/viz/Covid_dash/Dashboard1
