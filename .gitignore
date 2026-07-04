@@ -1,0 +1,13 @@
+# Data files (download locally from Our World in Data — see README)
+*.csv
+*.xlsx
+
+# Python
+__pycache__/
+
+# Logs & secrets
+*.log
+.env
+
+# Old / archived material
+old/

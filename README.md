@@ -5,7 +5,7 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/hbatistuzzo/Covid_SQL)
 ![GitHub last commit](https://img.shields.io/github/last-commit/hbatistuzzo/Covid_SQL)
 
-> __Warning__ In Progress!
+> __Note__ Completed!
 
 # Project objective
 
@@ -23,6 +23,8 @@ I've done this project to showcase my skills related to:
 
 Datasets can be found at : https://ourworldindata.org/covid-deaths
 - (btw, super useful repository for projects in data science 🤘)
+
+> __Note__ The raw data is **not committed** to this repo (the full Our World in Data COVID dataset is ~60MB+). Download it from [ourworldindata.org/coronavirus](https://ourworldindata.org/coronavirus) and load it locally to reproduce the queries.
 
 ---
 
